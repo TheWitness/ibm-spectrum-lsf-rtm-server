@@ -6367,10 +6367,13 @@ function grid_replace_tags($message, $cluster, $job, $data_array) {
 
 	/* custom replacements */
 	if (cacti_sizeof($data_array)) {
-	foreach ($data_array as $tag => $value) {
-		$message = str_replace($tag, $value, $message);
+		foreach ($data_array as $tag => $value) {
+			if ($value !== null) {
+				$message = str_replace($tag, $value, $message);
+			}
+		}
 	}
-	}
+
 	return $message;
 }
 
