@@ -6193,10 +6193,10 @@ function gridmemvio_notify_users() {
 				"<UNDERAGEJOBS>"  => $record["underage_jobs"],
 				"<OVERAGESLOTS>"  => $record["overage_slots"],
 				"<UNDERAGESLOTS>" => $record["underage_slots"],
-				"<TOTALOVERAGE>"    => display_job_memory(abs($record["total_overage"]), 3),
-				"<TOTALUNDERAGE>"   => display_job_memory(abs($record["total_underage"]),3),
-				"<AVGOVERAGE>"    => display_job_memory(abs($record["avg_overage"]), 3),
-				"<AVGUNDERAGE>"   => display_job_memory(abs($record["avg_underage"]),3),
+				"<TOTALOVERAGE>"    => display_job_memory(abs($record["total_overage"] ?? 0), 3),
+				"<TOTALUNDERAGE>"   => display_job_memory(abs($record["total_underage"] ?? 0),3),
+				"<AVGOVERAGE>"    => display_job_memory(abs($record["avg_overage"] ?? 0), 3),
+				"<AVGUNDERAGE>"   => display_job_memory(abs($record["avg_underage"] ?? 0),3),
 				"<AVGOVERRES>"    => display_job_memory($record["avg_overreserve"], 3),
 				"<AVGUNDERRES>"   => display_job_memory($record["avg_underreserve"], 3)
 			);
